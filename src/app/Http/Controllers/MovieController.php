@@ -55,10 +55,12 @@ class MovieController extends Controller
         $fields = $request->validated();
         try {
             $movie = Movie::create($fields);
-            return response()->json([
-                'data' => $movie,
-                'message' => 'Create movie successfully'
-            ], 201);
+
+            return redirect()->route('movies.show', ['id' => $movie->id]);
+            // return response()->json([
+            //     'data' => $movie,
+            //     'message' => 'Create movie successfully'
+            // ], 201);
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return response()->json(['message' => $e->getMessage()], 500);

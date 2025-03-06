@@ -41,8 +41,8 @@ class MovieRequest extends FormRequest
             'imdb_votes' => 'required|string',
             'imdb_id' => 'required|string|unique:movies,imdb_id',
             'type' => 'required|string',
-            'images' => 'required|array',
-            'images.*' => 'url',
+            'images' => 'nullable|array',
+            // 'images.*' => 'url',
         ];
     }
 }

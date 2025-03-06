@@ -68,7 +68,7 @@
 
     <div>
         <label for="plot">Nội dung:</label>
-        <textarea name="Plot" id="plot">{{ old('Plot') }}</textarea>
+        <textarea name="plot" id="plot">{{ old('plot') }}</textarea>
     </div>
 
     <div>
@@ -97,25 +97,25 @@
     </div>
 
     <div>
-        <label for="imdbRating">IMDB Rating:</label>
-        <input type="text" name="imdbRating" id="imdbRating" value="{{ old('imdbRating') }}">
+        <label for="imdb_rating">IMDB Rating:</label>
+        <input type="text" name="imdb_rating" id="imdb_rating" value="{{ old('imdb_rating') }}">
     </div>
 
     <div>
-        <label for="imdbVotes">IMDB Votes:</label>
-        <input type="text" name="imdbVotes" id="imdbVotes" value="{{ old('imdbVotes') }}">
+        <label for="imdb_votes">IMDB Votes:</label>
+        <input type="text" name="imdb_votes" id="imdb_votes" value="{{ old('imdb_votes') }}">
     </div>
 
     <div>
-        <label for="imdbID">IMDB ID:</label>
-        <input type="text" name="imdbID" id="imdbID" value="{{ old('imdbID') }}">
+        <label for="imdb_id">IMDB ID:</label>
+        <input type="text" name="imdb_id" id="imdb_id" value="{{ old('imdb_id') }}">
     </div>
 
     <div>
         <label for="type">Loại:</label>
-        <select name="Type" id="type">
-            <option value="movie" {{ old('Type') == 'movie' ? 'selected' : '' }}>Movie</option>
-            <option value="series" {{ old('Type') == 'series' ? 'selected' : '' }}>Series</option>
+        <select name="type" id="type">
+            <option value="movie" {{ old('type') == 'movie' ? 'selected' : '' }}>Movie</option>
+            <option value="series" {{ old('type') == 'series' ? 'selected' : '' }}>Series</option>
         </select>
     </div>
 
