@@ -40,10 +40,7 @@ class MovieController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->paginate($limit);
 
-            return response()->json([
-                'data' => $movies,
-                'message' => 'Get data successfully'
-            ], 200);
+            return view('movies.index', compact('movies'));
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return response()->json(['message' => 'Get data failed'], 500);
@@ -68,6 +65,26 @@ class MovieController extends Controller
         }
     }
 
+    public function create(Request $request)
+    {
+        try {
+            return view('movies.create');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
+    }
+
+    public function edit(Request $request)
+    {
+        try {
+            return view('movies.edit');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
+    }
+
     /**
      * Display the specified resource.
      */
@@ -75,10 +92,7 @@ class MovieController extends Controller
     {
         try {
             $movie = Movie::findOrFail($id);
-            return response()->json([
-                'data' => $movie,
-                'message' => 'Get data successfully'
-            ], 200);
+            return view('movies.show', compact('movie'));
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             return response()->json(['message' => 'Get data failed'], 500);
